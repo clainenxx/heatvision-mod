@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "heatvision",
+  "version": "${version}",
+  "name": "Heat Vision",
+  "description": "Tekan tombol (default: I) untuk menembakkan laser panas dari mata. Membakar & menghancurkan blok, melukai dan membakar entity. Ada stamina 10 detik, cooldown 20 detik, dan suara laser.",
+  "authors": ["Geord"],
+  "contact": {
+    "sources": "https://github.com/clainenxx",
+    "homepage": "https://github.com/clainenxx"
+  },
+  "license": "MIT",
+  "icon": "assets/heatvision/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.example.heatvision.HeatVisionMod"],
+    "client": ["com.example.heatvision.client.HeatVisionClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.5",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

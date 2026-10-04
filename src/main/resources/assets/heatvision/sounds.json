@@ -1,0 +1,8 @@
+{
+  "laser_loop": {
+    "sounds": [ { "name": "heatvision:laser_loop", "stream": false } ]
+  },
+  "laser_start": {
+    "sounds": [ { "name": "heatvision:laser_start", "stream": false } ]
+  }
+}
