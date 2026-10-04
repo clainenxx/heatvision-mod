@@ -1,34 +1,41 @@
 # Heat Vision
 
-Mod Fabric untuk Minecraft **1.21.5**.
+Ever wanted to be a superhero? Press a key and **shoot glowing laser beams straight from your eyes**.
 
-Tekan (tahan) tombol **I** — bisa diganti di *Options > Controls > Heat Vision* —
-dan dua laser panas keluar dari mata kamu, lurus ke arah crosshair.
+![GEORD MODS](https://cdn.modrinth.com/data/JwVJg3tw/images/1ef0f5e8c7799bcaac79597432a7d3643eca87a9.png)
 
-- **Kena tanah / blok**: muncul api di sisi blok, lalu blok hancur dengan efek ledakan
-  (makin keras bloknya, makin lama hancurnya; bedrock tidak bisa hancur).
-- **Kena player / mob / entity**: kena damage terus-menerus selama laser menempel di badannya,
-  dan entity ikut terbakar.
-- **First person**: seluruh layar jadi berfilter merah.
-- **Stamina**: heat vision hanya bisa dipakai total **10 detik**. Progress bar stamina ada di atas hotbar.
-  Kalau stamina habis -> **cooldown 20 detik** (bar terisi pelan-pelan, abu-abu), lalu stamina penuh lagi.
-  Kalau dilepas sebelum habis, stamina terisi ulang **secepat pemakaian** (pakai 7 detik = 7 detik untuk penuh),
-  dan selama terisi ulang heat vision tetap bisa dipakai lagi.
-- **Suara laser** selama aktif (+ suara "pew" saat menyala), terdengar juga oleh pemain lain.
-- Mata menyala di wajah dan laser keluar tepat dari kedua mata.
-- Laser digambar sebagai beam sungguhan (bukan particle) dan terlihat oleh pemain lain.
+## Features
 
-## Pengaturan
-Server (`HeatVisionMod`): `RANGE`, `DAMAGE`, `HIT_INTERVAL_TICKS`, `BURN_SECONDS`,
-`BREAK_BASE_TICKS`, `BREAK_TICKS_PER_HARDNESS`, `BREAK_BLOCKS`, `MAX_STAMINA_TICKS` (200 = 10 dtk), `COOLDOWN_TICKS` (400 = 20 dtk).
-Client (`HeatVisionClient`): `HOLD_MODE` (tahan vs toggle), `FILTER_ALPHA`, `LOOP_VOLUME`, `START_VOLUME`, `SHOW_BAR_WHILE_REGEN`.
-Posisi mata laser (`BeamRenderer`): `EYE_FORWARD`, `EYE_SIDE`, `NECK_BELOW_EYE`, `HEAD_EYE_UP`.
+- **Real laser beams from both eyes**: pulsing orange-white beams with glowing eyes on your character, visible in third person and to other players.
+- **Burns and breaks blocks**: lasers heat up whatever they hit and break blocks over time, depending on how hard the block is.
+- **Damages and ignites entities**: mobs and players hit by the beam take damage and catch fire.
+- **Stamina system**: you can fire for a total of **10 seconds**. A progress bar above your hotbar shows how much is left.
+- **Smart recharge**: stop early and your stamina refills at the same speed you used it. Use it for 7 seconds and it takes 7 seconds to recharge. You can fire again at any time while recharging.
+- **Cooldown**: run out completely and heat vision goes on a **20 second cooldown** before it is ready again.
+- **Laser sound effects**: a "pew" when it activates and a continuous laser hum while it is firing. Other players hear it too, with distance falloff.
+- **Red heat filter** in first person for that authentic superhero feeling.
+- **Multiplayer ready**: stamina, cooldown, damage, and block breaking are handled by the server.
 
-## Build
-```
-./gradlew build      # -> build/libs/heatvision-1.0.0.jar
-./gradlew runClient
-```
-Mod harus terpasang di server juga (di singleplayer otomatis).
+## How to use
 
-Made by **Geord**. Licensed under MIT.
+1. Press **I** (default, changeable in Controls) to fire.
+2. Hold the key to keep firing. The bar above your hotbar shows your remaining stamina.
+3. If the bar runs out, wait out the cooldown. The bar refills while it cools down.
+
+## Requirements
+
+- Minecraft **1.21.5**
+- Fabric Loader 0.16.10 or newer
+- [Fabric API](https://modrinth.com/mod/fabric-api)
+- Java 21
+
+## Multiplayer
+
+Heat Vision must be installed on **both the server and every player**. The lasers can hurt players and destroy blocks, so be careful around your friends' bases! If your server uses a protection or claim mod, the laser may not respect it.
+
+## Feedback
+
+Found a bug or have an idea? Leave a comment or open an issue on the source page.
+
+---
+Made with ❤️ by **Geord**
